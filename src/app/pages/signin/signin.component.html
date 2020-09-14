@@ -1,0 +1,41 @@
+<div class="logging">
+<form class="signin" method="POST" (ngSubmit)="login()">
+  <h3>Login</h3>
+  <input type="text" [(ngModel)]="email" name="email" placeholder="Enter Email Address..."><br><br>
+  <input type="password" [(ngModel)]="password" name="password" placeholder="Enter password..."><br><br>
+  <button type="submit" id=""  class="btn btn-primary">LOGIN</button>
+</form>
+<div class="form-group">
+  <p *ngIf="errorMessage.length > 0" class="text-danger" >{{errorMessage}} </p>
+  <p *ngIf="error.message.length > 0" class="text-danger" >{{error.message}} </p>
+</div>
+<hr>
+<div class="formGroup">
+  <button type="button" (click)="loginG()"><img src="assets/g.png" width="30"/>
+    Login with Google
+  </button>
+</div>
+<hr>
+<!-- Calling FacebookAuth Api from AuthService -->
+<div class="formGroup">
+  <button type="button" class="fb" (click)="loginF()"><img src="assets/fb.png" width="32"/>
+     Login with Facebook
+  </button>
+</div>
+<hr>
+<!-- <div *ngIf="phoneSignIn; else phone">
+  <input placeholder="Phone Number" [(ngModel)]="phoneNumber">
+  <div id="recaptcha-container"></div>
+  <button>Send OTP</button>
+  <hr>
+  <label>OTP</label><input name="otp" [(ngModel)]="otp">
+  <button (click)="verifyOTP()">Verify OTP</button>
+  <button (click)="phoneSignin()">Cancel</button>
+</div> -->
+
+
+<div>
+  <button (click)="phoneSignin()"><img src="assets/phone.png" width="32"/>
+    Login with Phone Number</button>
+</div>
+</div>
